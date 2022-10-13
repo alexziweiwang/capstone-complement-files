@@ -113,7 +113,7 @@ if [ -f $data/segments ]; then
   ./split_scp.pl $data/segments $split_segments || exit 1;
   rm $logdir/.error 2>/dev/null
 
-  !perl ./run.pl JOB=1:$nj $logdir/make_mfcc_${name}.JOB.log \
+  perl ./run.pl JOB=1:$nj $logdir/make_mfcc_${name}.JOB.log \
     extract-segments scp,p:$scp $logdir/segments.JOB ark:- \| \
     compute-mfcc-feats $vtln_opts --verbose=2 --config=$mfcc_config ark:- ark:- \| \
     copy-feats --compress=$compress ark:- \
@@ -143,7 +143,7 @@ else
         config=$mfcc_config
      fi
 
-     (!perl ./run.pl $logdir/make_mfcc_${name}.$JOB.log \
+     (perl ./run.pl $logdir/make_mfcc_${name}.$JOB.log \
        compute-mfcc-feats  $vtln_opts --verbose=2 --config=$config \
         scp,p:$logdir/wav_${name}.$JOB.scp ark:- \| \
         copy-feats --compress=$compress ark:- \
