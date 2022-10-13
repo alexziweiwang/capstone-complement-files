@@ -1,4 +1,6 @@
 #!/usr/bin/env perl
+my $sh_cmd = "source /content/torgo_asr/path.sh";
+system ($sh_cmd);
 use warnings; #sed replacement for -w perl parameter
 # In general, doing
 #  run.pl some.log a b c is like running the command a b c in
