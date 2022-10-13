@@ -1,4 +1,4 @@
-!/usr/bin/env perl
+#!/usr/bin/env perl
 use warnings; #sed replacement for -w perl parameter
 # In general, doing
 #  run.pl some.log a b c is like running the command a b c in
