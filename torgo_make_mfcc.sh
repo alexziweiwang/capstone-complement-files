@@ -10,7 +10,7 @@
 
 # Begin configuration section.
 nj=8
-cmd=/content/torgo_asr/run.pl
+cmd=!bash /content/torgo_asr/run.pl
 mfcc_config=/content/torgo_asr/conf/mfcc.conf
 mfcc_config_dys=/content/torgo_asr/conf/mfcc_dysarthric.conf  # can of course also be conf/mfcc.conf
 compress=true
